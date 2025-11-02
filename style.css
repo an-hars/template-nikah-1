@@ -1,0 +1,592 @@
+/* --- CSS Variables / Custom Properties --- */
+:root {
+    /* Palet Warna Mirip Desain Bunga */
+    --primary-color: #556B2F; /* Olive Drab - Cokelat kehijauan tua (Utama) */
+    --secondary-color: #8FBC8F; /* Dark Sea Green - Hijau agak pucat (Aksen) */
+    --accent-color: #F0FFF0; /* Honeydew - Putih sangat muda (Latar/Kontras) */
+    --text-color: #333;
+    --light-text-color: #F0FFF0;
+    --background-light: #FBFBFB; /* Hampir Putih */
+    --background-dark: #556B2F; /* Warna Navbar Bawah */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-light);
+    overflow-x: hidden;
+    padding-bottom: 60px; /* Jarak untuk navbar bawah */
+    scroll-behavior: smooth;
+}
+
+/* --- Utility Styles --- */
+h2 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.section-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+.names-main {
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+.names-sub {
+    font-family: var(--font-primary);
+    font-weight: 400;
+}
+
+/* --- Button Style --- */
+.button-action {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.button-action:hover {
+    background-color: var(--primary-color);
+}
+
+/* --- 1. Cover Page --- */
+.cover-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/cover-bg.jpg') no-repeat center center/cover; /* Ganti dengan gambar cover Anda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+    transition: opacity 1s ease;
+    overflow: hidden;
+}
+
+.cover-page.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cover-page .cover-content {
+    background-color: rgba(255, 255, 255, 0.85); /* Latar belakang putih transparan */
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    position: relative;
+    z-index: 2;
+    border: 1px solid var(--secondary-color); /* Border aksen */
+}
+
+.cover-page .greeting {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+.cover-page h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+.cover-page .date {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+.cover-page .invitee {
+    margin: 2rem 0 1.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+.cover-page .guest-name {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+#open-invitation-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    cursor: pointer;
+}
+#open-invitation-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Gambar Bunga pada Cover Page */
+.cover-flower {
+    position: absolute;
+    width: 180px; /* Ukuran bunga */
+    height: auto;
+    z-index: 1; /* Di belakang cover-content */
+    opacity: 0.9;
+}
+.cover-flower.top-left {
+    top: -50px;
+    left: -50px;
+    transform: rotate(10deg);
+}
+.cover-flower.bottom-right {
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(-170deg);
+}
+
+/* --- 2. Main Content & Sections --- */
+.main-content {
+    /* padding-top: 60px; (Dihapus karena navbar di bawah) */
+}
+
+.section {
+    padding: 4rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hiasan Bunga di Section Home (Contoh) */
+#home {
+    background: url('images/section-bg-flower.png') no-repeat center 90% / 100% auto; /* Latar belakang bunga */
+    padding-bottom: 6rem; 
+}
+
+
+/* Countdown Timer */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 2rem auto;
+    max-width: 400px;
+}
+.countdown-item {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 0.8rem 0.5rem;
+    border-radius: var(--border-radius);
+    flex: 1;
+}
+.countdown-item span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.countdown-item p {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+/* Couple Info */
+.couple-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.couple-info .groom, .couple-info .bride {
+    padding: 1.5rem;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 300px;
+    width: 100%;
+}
+.couple-info img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 4px solid var(--secondary-color);
+}
+.heart-separator {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+.social-link {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Timeline */
+/* --- Perbaikan Timeline Section (Acara) --- */
+.timeline {
+    position: relative;
+    margin: 3rem auto;
+    max-width: 400px; /* Batasi lebar total timeline agar tidak terlalu melebar di layar besar */
+    padding: 0 10px; /* Tambahkan sedikit padding horizontal */
+}
+
+/* Garis Vertikal Timeline */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--secondary-color); /* Warna garis vertikal */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    
+    /* PENTING: Atur z-index menjadi nilai yang sangat rendah */
+    z-index: 0; 
+}
+
+.timeline-item {
+    padding: 10px 0; /* Padding vertikal untuk jarak antar item */
+    position: relative;
+    width: 100%;
+    /* Di tampilan mobile, semua item diletakkan di tengah */
+}
+
+/* Posisikan Titik (Dot) di Garis Tengah */
+.timeline-dot {
+    height: 15px;
+    width: 15px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 25px; /* Sesuaikan posisi vertikal dot */
+    left: 50%; /* Posisikan dot tepat di tengah */
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 3px solid white; /* Border putih agar menonjol dari garis */
+}
+
+/* Konten Timeline (Kotak Putih Detail Acara) */
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Konten di tengah kotak */
+    position: relative;
+    margin: 15px 0; /* Jarak atas/bawah agar terpisah dari dot */
+    
+    /* Gunakan properti ini agar kotak konten mengisi hampir penuh lebar max-width 400px */
+    width: 95%; 
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+}
+
+/* Penyesuaian Teks di dalam Kotak */
+.timeline-content h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.timeline-content p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+.location-detail {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+/* Hapus padding yang tidak perlu di item timeline */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+.timeline-item:nth-child(even) {
+    left: 0;
+}
+.location-detail {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+/* Map */
+.map-container {
+    margin: 2rem 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+/* Gallery */
+.gallery {
+    /* PENTING: Inilah yang membuat 2 kolom */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+.gallery-item {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Guestbook / RSVP / E-Gift */
+#guestbook-form input, #guestbook-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+}
+.rsvp-status {
+    text-align: left;
+    margin-bottom: 15px;
+}
+.rsvp-status label:not(:first-child) {
+    margin-right: 15px;
+    margin-left: 5px;
+}
+.e-gift-container {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+}
+.account-details {
+    margin-top: 1rem;
+}
+.account-details p {
+    font-family: monospace;
+    margin: 0.5rem 0 0.2rem 0;
+}
+.copy-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+.ucapan-list {
+    margin-top: 2rem;
+    text-align: left;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+}
+footer i {
+    color: red;
+}
+
+/* --- 3. Navbar (Bottom Bar) --- */
+.navbar {
+    position: fixed;
+    bottom: 0; /* PENTING: Pindahkan ke bawah */
+    left: 0;
+    width: 100%;
+    background-color: var(--background-dark);
+    padding: 0.5rem 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+}
+
+.navbar a {
+    color: var(--secondary-color); /* Warna default ikon/teks */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.4rem 0.2rem;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.75rem; /* Ukuran font teks */
+    transition: color 0.3s ease;
+}
+
+.navbar a i {
+    font-size: 1.3rem; /* Ukuran ikon */
+    margin-bottom: 0.2rem;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--light-text-color); /* Warna saat hover/aktif */
+}
+.navbar a:hover i,
+.navbar a.active i {
+    color: var(--light-text-color);
+}
+.nav-text {
+    display: block; /* Pastikan teks terlihat */
+}
+
+/* --- Responsive (Mobile First - Penyesuaian untuk layar lebih kecil) --- */
+@media (max-width: 480px) {
+    .cover-page h1 {
+        font-size: 2.5rem;
+    }
+    .cover-page .guest-name {
+        font-size: 1.4rem;
+    }
+    
+    .countdown-item span {
+        font-size: 2rem;
+    }
+    
+   
+}
+@media (max-width: 768px) {
+    /* ... kode yang sudah ada ... */
+    
+    /* Tampilkan bingkai bunga di HP */
+    .global-flower-frame {
+        display: block; 
+    }
+    
+    .global-flower-frame.left-frame {
+        /* Sesuaikan posisi di HP */
+        top: 20px; 
+        left: 0;
+        width: 60px; /* Sedikit lebih kecil */
+        transform: translateX(0); /* Jangan digeser terlalu jauh */
+    }
+    
+    .global-flower-frame.right-frame {
+        top: 20px;
+        right: 0;
+        width: 60px; 
+        transform: translateX(0) rotate(180deg); 
+    }
+    
+    /* ... kode yang sudah ada ... */
+}
+/* --- Style untuk Ayat Suci Al-Qur'an Section --- */
+.quran-container {
+    padding: 2rem 1rem;
+    background-color: var(--accent-color); /* Warna latar belakang ringan */
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    box-shadow: var(--box-shadow);
+}
+
+.arabic-text {
+    font-family: 'Kufi', 'Traditional Arabic', sans-serif; /* Gunakan font Arab jika tersedia */
+    font-size: 1.8rem;
+    line-height: 2.5; /* Jarak antar baris lebih lebar untuk Arab */
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: right; /* Teks Arab dari kanan ke kiri */
+}
+
+.translation-text {
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.source-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+}
+
+/* --- Bunga Bingkai Global (Default: Tersembunyi) --- */
+.global-flower-frame {
+    display: none; /* Default: Sembunyikan di layar besar/Desktop */
+    position: fixed; /* Penting agar bunga tetap di tempat saat scroll */
+    width: 80px; /* Ukuran bunga bingkai */
+    height: auto;
+    opacity: 0.9;
+    z-index: 500; /* Di atas konten, tapi di bawah navbar bawah */
+    pointer-events: none; /* Agar tidak menghalangi klik ke konten di bawahnya */
+}
+
+.global-flower-frame.left-frame {
+    top: 50px; /* Jarak dari atas */
+    left: 0;
+    transform: translateX(-50%) rotate(0deg); /* Geser ke kiri */
+}
+
+.global-flower-frame.right-frame {
+    top: 50px;
+    right: 0;
+    transform: translateX(50%) rotate(180deg); /* Geser ke kanan dan diputar */
+}
+
+/* --- Animasi --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

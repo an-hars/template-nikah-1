@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="cover-page" class="cover-page active">
+        
+      
+        
+
+        <div class="cover-content fade-in">
+            <p class="greeting">The Wedding Of</p>
+            <h1 class="names-main">yuza & anhar</h1>
+            <p class="date">Sabtu, 10 Mei 2030</p>
+            
+            <div class="invitee">
+                <p>Kepada Yth.</p>
+                <p class="guest-name" id="guest-name">[Nama Tamu Undangan]</p>
+            </div>
+
+            <button id="open-invitation-btn">
+                <i class="fas fa-envelope-open-text"></i> Buka Undangan
+            </button>
+        </div>
+        
+        <audio id="background-music" loop>
+            <source src="music.mp3" type="audio/mpeg"> 
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div id="main-content" class="main-content hidden">
+        <img src="images/tanam1.png" alt="Flower Frame Left" class="global-flower-frame left-frame">
+    <img src="images/tanam1.png" alt="Flower Frame Right" class="global-flower-frame right-frame">
+
+        <section id="home" class="section fade-in-scroll">
+            <h2 class="section-title names-main">yuza & anhar</h2>
+            <p class="section-subtitle">Kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.</p>
+<div class="home-couple-photos">
+                <img src="images/nikah.png" alt="Foto Rani" class="home-photo photo-rani fade-in-scroll">
+               
+            </div>
+            <div class="countdown-container">
+                <div class="countdown-item"><span id="days">00</span><p>Hari</p></div>
+                <div class="countdown-item"><span id="hours">00</span><p>Jam</p></div>
+                <div class="countdown-item"><span id="minutes">00</span><p>Menit</p></div>
+                <div class="countdown-item"><span id="seconds">00</span><p>Detik</p></div>
+            </div>
+            
+            <a href="#" class="button-action">Simpan Tanggal</a>
+        </section>
+
+        <section id="mempelai" class="section fade-in-scroll">
+            <h2 class="section-title">Mempelai</h2>
+            <p class="section-subtitle">Dengan memohon Rahmat & Ridho Allah SWT</p>
+
+            <div class="couple-info">
+                <div class="groom">
+                    <img src="images/bima.jpg" alt="Foto Bima" class="profile-pic">
+                    <h3 class="names-sub">muhammad anhar solihin</h3>
+                    <p>Putra dari Bapak  & Ibu </p>
+                    <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <div class="heart-separator">
+                    <i class="fas fa-heart"></i>
+                </div>
+
+                <div class="bride">
+                    <img src="images/rani.jpg" alt="Foto Rani" class="profile-pic">
+                    <h3 class="names-sub">layuza</h3>
+                    <p>Putri dari Bapak  & Ibu </p>
+                    <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+        <section id="quran" class="section fade-in-scroll">
+    <h2 class="section-title">Ayat Suci Al-Qur'an</h2>
+    <p class="section-subtitle">Dan di antara tanda-tanda kekuasaan-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri...</p>
+
+    <div class="quran-container">
+        <p class="arabic-text">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        </p>
+        
+        <p class="translation-text">
+            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+        </p>
+        
+        <p class="source-text">
+            QS. Ar-Rum Ayat 21
+        </p>
+    </div>
+</section>
+
+        <section id="acara" class="section fade-in-scroll">
+            <h2 class="section-title">Detail Acara</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Akad Nikah</h3>
+                        <p>Sabtu, 10 Mei 2025</p>
+                        <p>Pukul 08.00 - 10.00 WIB</p>
+                        <p class="location-detail">Masjid Agung Al-Falah</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Resepsi Pernikahan</h3>
+                        <p>Sabtu, 10 Mei 2025</p>
+                        <p>Pukul 11.00 - 14.00 WIB</p>
+                        <p class="location-detail">Gedung Serbaguna Puri Indah</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1583.568297753697!2d112.74867451433276!3d-7.255952796440597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f91ff38c4c79%3A0x7d01f92e2b34a96e!2sSurabaya%20Plaza%20Hotel!5e0!3m2!1sid!2sid!4v1701168000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <a href="https://maps.app.goo.gl/XXXXX" target="_blank" class="button-action">Lihat Peta Lokasi</a>
+        </section>
+
+        <section id="galeri" class="section fade-in-scroll">
+            <h2 class="section-title">Galeri Foto</h2>
+            <div class="gallery">
+                <img src="images/prewed1.jpg" alt="Foto 1" class="gallery-item">
+                <img src="images/prewed2.jpg" alt="Foto 2" class="gallery-item">
+                <img src="images/prewed3.jpg" alt="Foto 3" class="gallery-item">
+                <img src="images/prewed4.jpg" alt="Foto 4" class="gallery-item">
+                 <img src="images/prewed1.jpg" alt="Foto 1" class="gallery-item">
+                <img src="images/prewed2.jpg" alt="Foto 2" class="gallery-item">
+                <img src="images/prewed3.jpg" alt="Foto 3" class="gallery-item">
+                <img src="images/prewed4.jpg" alt="Foto 4" class="gallery-item">
+            </div>
+            
+            <a href="#" class="button-action">Video Pre-Wedding</a>
+        </section>
+        
+        <section id="guestbook" class="section fade-in-scroll">
+            <h2 class="section-title">Buku Tamu & Doa</h2>
+            <p class="section-subtitle">Berikan ucapan terbaik dan konfirmasi kehadiran Anda.</p>
+
+            <div class="e-gift-container">
+                <h3>Kirim Hadiah (E-Gift)</h3>
+                <p>Tanpa mengurangi rasa hormat, bagi yang ingin mengirimkan tanda kasih.</p>
+                <div class="account-details">
+                    <p>Bank Mandiri: 1234567890 (A.N. Rani Puspa)</p>
+                    <button class="copy-btn" data-clipboard-text="1234567890">Salin No. Rek</button>
+                    <p>DANA/Gopay: 081234567890</p>
+                    <button class="copy-btn" data-clipboard-text="081234567890">Salin No. HP</button>
+                </div>
+            </div>
+
+            <form id="guestbook-form" action="#" method="POST">
+                <h3>Kirim Ucapan & RSVP</h3>
+                <input type="text" name="name" placeholder="Nama Anda" required>
+                <textarea name="message" placeholder="Tuliskan ucapan & doa terbaik..." required></textarea>
+                
+                <div class="rsvp-status">
+                    <label>Konfirmasi Kehadiran:</label>
+                    <input type="radio" id="hadir" name="status" value="Hadir" required>
+                    <label for="hadir">Hadir</label>
+                    <input type="radio" id="tidak-hadir" name="status" value="Tidak Hadir">
+                    <label for="tidak-hadir">Tidak Hadir</label>
+                </div>
+                
+                <button type="submit" class="button-action">Kirim Ucapan</button>
+            </form>
+
+            <div class="ucapan-list">
+                <p>Ucapan terbaru dari tamu akan dimuat...</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Undangan anhar & yuza. Made with <i class="fas fa-heart"></i>.</p>
+        </footer>
+        
+        <nav class="navbar">
+    <a href="#home"><i class="fas fa-home"></i><span class="nav-text">Home</span></a>
+    <a href="#mempelai"><i class="fas fa-user-friends"></i><span class="nav-text">Mempelai</span></a>
+    <a href="#acara"><i class="fas fa-calendar-alt"></i><span class="nav-text">Acara</span></a>
+    <a href="#quran"><i class="fas fa-book-open"></i><span class="nav-text">Al-Qur'an</span></a> <a href="#galeri"><i class="fas fa-images"></i><span class="nav-text">Galeri</span></a>
+    <a href="#guestbook"><i class="fas fa-comment-dots"></i><span class="nav-text">Doa</span></a>
+</nav>
+
+    </div> <script src="script.js"></script>
+</body>
+</html>
