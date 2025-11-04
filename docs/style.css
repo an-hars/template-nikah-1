@@ -590,3 +590,34 @@ footer i {
     opacity: 1;
     transform: translateY(0);
 }
+/* --- Tambahan Style untuk Tombol Kontrol Musik --- */
+.music-control {
+    position: fixed;
+    bottom: 80px; /* Di atas navbar bawah */
+    right: 15px;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 998; /* Di bawah navbar (999), di atas konten */
+    transition: background-color 0.3s ease;
+}
+
+.music-control:hover {
+    background-color: var(--primary-color);
+}
+
+.music-control i {
+    font-size: 1.2rem;
+}
+
+/* Jika musik mati */
+.music-control.paused {
+    background-color: #f44336; /* Warna merah */
+}

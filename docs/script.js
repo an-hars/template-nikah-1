@@ -1,3 +1,7 @@
+// ... (Kode 2. Buka Undangan & Putar Musik) ...
+const musicControl = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+// ...
 // --- 1. Ambil Nama Tamu dari URL ---
 // Contoh URL: index.html?to=Bapak+Budi
 function getGuestName() {
@@ -27,15 +31,25 @@ const backgroundMusic = document.getElementById('background-music');
 
 openInvitationBtn.addEventListener('click', function() {
     coverPage.classList.add('hidden');
-    mainContent.classList.remove('hidden');
-    document.body.style.overflowY = 'scroll'; // Aktifkan scroll
+    // ...
     
     // Putar musik (Autoplay mungkin diblokir, jadi putar di sini)
-    backgroundMusic.play().catch(e => {
-        console.log("Musik gagal diputar: ", e);
+    backgroundMusic.play().then(() => {
+        // Jika berhasil diputar, tampilkan tombol kontrol dengan status 'Up'
+        if (musicControl) {
+            musicControl.style.display = 'flex'; 
+        }
+    }).catch(e => {
+        console.log("Musik gagal diputar, atur ke status 'Mute': ", e);
+        // Jika gagal (diblokir), atur ikon sebagai 'Mute'
+        if (musicControl) {
+            musicControl.style.display = 'flex'; 
+            musicControl.classList.add('paused');
+            musicIcon.classList.remove('fa-volume-up');
+            musicIcon.classList.add('fa-volume-mute');
+        }
     });
 });
-
 
 // --- 3. Countdown Timer ---
 // GANTI TANGGAL DI BAWAH INI DENGAN FORMAT YYYY-MM-DDTHH:MM:SS
@@ -140,3 +154,24 @@ document.querySelectorAll('.copy-btn').forEach(button => {
         });
     });
 });
+// --- 7. Logika Kontrol Musik (Play/Pause) ---
+if (musicControl) {
+    musicControl.addEventListener('click', function() {
+        if (backgroundMusic.paused) {
+            // Jika musik mati, mainkan
+            backgroundMusic.play().catch(e => {
+                console.error("Gagal memutar musik saat diklik:", e);
+                // Di sini Anda bisa memberi notifikasi ke pengguna jika gagal
+            });
+            this.classList.remove('paused');
+            musicIcon.classList.remove('fa-volume-mute');
+            musicIcon.classList.add('fa-volume-up');
+        } else {
+            // Jika musik hidup, matikan
+            backgroundMusic.pause();
+            this.classList.add('paused');
+            musicIcon.classList.remove('fa-volume-up');
+            musicIcon.classList.add('fa-volume-mute');
+        }
+    });
+}

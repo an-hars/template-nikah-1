@@ -11,11 +11,12 @@
 </head>
 <body>
 
-    <div id="cover-page" class="cover-page active">
-        
-      
-        
+    <audio id="background-music" loop>
+        <source src="lagu.mp3" type="audio/mpeg"> 
+        Your browser does not support the audio element.
+    </audio>
 
+    <div id="cover-page" class="cover-page active">
         <div class="cover-content fade-in">
             <p class="greeting">The Wedding Of</p>
             <h1 class="names-main">yuza & anhar</h1>
@@ -30,23 +31,22 @@
                 <i class="fas fa-envelope-open-text"></i> Buka Undangan
             </button>
         </div>
-        
-        <audio id="background-music" loop>
-            <source src="docs/lagu.mp3" type="audio/mpeg"> 
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+        </div>
 
     <div id="main-content" class="main-content hidden">
+        
         <img src="images/tanam1.png" alt="Flower Frame Left" class="global-flower-frame left-frame">
-    <img src="images/tanam1.png" alt="Flower Frame Right" class="global-flower-frame right-frame">
+        <img src="images/tanam1.png" alt="Flower Frame Right" class="global-flower-frame right-frame">
+        
+        <div id="music-control" class="music-control" style="display: none;">
+            <i id="music-icon" class="fas fa-volume-up"></i>
+        </div>
 
         <section id="home" class="section fade-in-scroll">
             <h2 class="section-title names-main">yuza & anhar</h2>
             <p class="section-subtitle">Kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.</p>
-<div class="home-couple-photos">
+            <div class="home-couple-photos">
                 <img src="images/nikah.png" alt="Foto anhar" class="home-photo photo-yuza fade-in-scroll">
-               
             </div>
             <div class="countdown-container">
                 <div class="countdown-item"><span id="days">00</span><p>Hari</p></div>
@@ -66,7 +66,7 @@
                 <div class="groom">
                     <img src="images/cowok.jpg" alt="Foto anhar" class="profile-pic">
                     <h3 class="names-sub">muhammad anhar solihin</h3>
-                    <p>Putra dari Bapak  & Ibu </p>
+                    <p>Putra dari Bapak  & Ibu </p>
                     <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
                 
@@ -77,29 +77,29 @@
                 <div class="bride">
                     <img src="images/cewek.jpg" alt="Foto yuza" class="profile-pic">
                     <h3 class="names-sub">layuza</h3>
-                    <p>Putri dari Bapak  & Ibu </p>
+                    <p>Putri dari Bapak  & Ibu </p>
                     <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </section>
         <section id="quran" class="section fade-in-scroll">
-    <h2 class="section-title">Ayat Suci Al-Qur'an</h2>
-    <p class="section-subtitle">Dan di antara tanda-tanda kekuasaan-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri...</p>
+            <h2 class="section-title">Ayat Suci Al-Qur'an</h2>
+            <p class="section-subtitle">Dan di antara tanda-tanda kekuasaan-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri...</p>
 
-    <div class="quran-container">
-        <p class="arabic-text">
-            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
-        </p>
-        
-        <p class="translation-text">
-            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
-        </p>
-        
-        <p class="source-text">
-            QS. Ar-Rum Ayat 21
-        </p>
-    </div>
-</section>
+            <div class="quran-container">
+                <p class="arabic-text">
+                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+                </p>
+                
+                <p class="translation-text">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+                </p>
+                
+                <p class="source-text">
+                    QS. Ar-Rum Ayat 21
+                </p>
+            </div>
+        </section>
 
         <section id="acara" class="section fade-in-scroll">
             <h2 class="section-title">Detail Acara</h2>
@@ -144,7 +144,7 @@
                 <img src="images/pas f.jpg" alt="Foto 2" class="gallery-item">
                 <img src="images/pas g.jpg" alt="Foto 3" class="gallery-item">
                 <img src="images/pas h.jpg" alt="Foto 4" class="gallery-item">
-                 <img src="images/pas i.jpg" alt="Foto 3" class="gallery-item">
+                <img src="images/pas i.jpg" alt="Foto 3" class="gallery-item">
                 <img src="images/pas j.jpg" alt="Foto 4" class="gallery-item">
             </div>
             
@@ -188,16 +188,17 @@
         </section>
 
         <footer>
-            <p>&copy; 2025 Undangan anhar & yuza. Made with <i class="fas fa-heart"></i>.</p>
+            <p>© 2025 Undangan anhar & yuza. Made with <i class="fas fa-heart"></i>.</p>
         </footer>
         
         <nav class="navbar">
-    <a href="#home"><i class="fas fa-home"></i><span class="nav-text">Home</span></a>
-    <a href="#mempelai"><i class="fas fa-user-friends"></i><span class="nav-text">Mempelai</span></a>
-    <a href="#acara"><i class="fas fa-calendar-alt"></i><span class="nav-text">Acara</span></a>
-    <a href="#quran"><i class="fas fa-book-open"></i><span class="nav-text">Al-Qur'an</span></a> <a href="#galeri"><i class="fas fa-images"></i><span class="nav-text">Galeri</span></a>
-    <a href="#guestbook"><i class="fas fa-comment-dots"></i><span class="nav-text">Doa</span></a>
-</nav>
+            <a href="#home"><i class="fas fa-home"></i><span class="nav-text">Home</span></a>
+            <a href="#mempelai"><i class="fas fa-user-friends"></i><span class="nav-text">Mempelai</span></a>
+            <a href="#acara"><i class="fas fa-calendar-alt"></i><span class="nav-text">Acara</span></a>
+            <a href="#quran"><i class="fas fa-book-open"></i><span class="nav-text">Al-Qur'an</span></a>
+            <a href="#galeri"><i class="fas fa-images"></i><span class="nav-text">Galeri</span></a>
+            <a href="#guestbook"><i class="fas fa-comment-dots"></i><span class="nav-text">Doa</span></a>
+        </nav>
 
     </div> <script src="script.js"></script>
 </body>
